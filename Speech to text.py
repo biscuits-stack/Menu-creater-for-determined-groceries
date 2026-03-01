@@ -170,8 +170,9 @@ def process_audio(mp3_file: str):
 
 if __name__ == "__main__":
     print("=== 1. INVENTORY FROM FILE ===")
-    inventory = load_inventory_from_file("products.txt")
+    inventory = load_inventory_from_file(os.path.join(os.path.dirname(__file__), "products.txt"))
     display_inventory(inventory)
 
     print("\n=== 2. SPEECH-TO-TEXT FOOD EXTRACTION ===")
     process_audio(os.path.join(os.path.dirname(__file__), "Grocery.mp3"))
+
